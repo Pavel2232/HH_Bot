@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: build_and_push
     env:
+      - TG_TOKEN: ${{ secrets.TG_TOKEN }}
     steps:
       - name: clone code
         uses: actions/checkout@v3
