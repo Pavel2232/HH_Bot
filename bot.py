@@ -14,7 +14,7 @@ from DataClass import DetailVacancyResponse
 from main import HeadHunterPars
 
 env = Env()
-env.read_env('.env_ci')
+env.read_env('.env')
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=env('TG_TOKEN'))
 dp = Dispatcher(bot, storage=MemoryStorage())
