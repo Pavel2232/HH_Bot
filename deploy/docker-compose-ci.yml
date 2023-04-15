@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  bot:
+    image: pavel2232/todolist:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    restart: always
+    env_file:
+      - .env_ci
+    command: python bot.py
+    ports:
+      - 80:80
