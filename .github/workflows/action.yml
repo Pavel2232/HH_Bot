@@ -17,6 +17,7 @@ jobs:
     needs: build_and_push
     env:
       TG_TOKEN: ${{ secrets.TG_TOKEN }}
+
     steps:
       - name: clone code
         uses: actions/checkout@v3
@@ -31,7 +32,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "deploy/docker-compose.yml,deploy/.env_ci"
+          source: "deploy/docker-compose.yml,deploy/.env"
           target: "deploy"
           strip_components: 1
       - name: deploy app
